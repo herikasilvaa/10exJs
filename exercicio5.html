@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio5</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>5. Faça um programa que leia um número dado como entrada e apresente a mensagem “O número está na faixa de 20 a 90” se o valor fornecido estiver entre 20 e 90.</h1>
+
+	<div>
+		<label for="numero">Digite um número:</label>
+		<input type="number" id="numero">
+		<button onclick="verificarNumero()">Verificar número</button>
+	</div>
+
+	<p id="resultado"></p>
+
+	<script>
+		function verificarNumero() {
+			// Obtém o número digitado pelo usuário
+			let numero = document.getElementById("numero").value;
+
+			// Verifica se o número está na faixa de 20 a 90
+			if (numero >= 20 && numero <= 90) {
+				document.getElementById("resultado").innerHTML = "O número está na faixa de 20 a 90.";
+			} else {
+				document.getElementById("resultado").innerHTML = "O número não está na faixa de 20 a 90.";
+			}
+		}
+	</script>
+
+</body>
+</html>

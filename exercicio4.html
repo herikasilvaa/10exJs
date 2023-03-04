@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio4</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>4. Faça um programa que: a) peça ao usuário para digitar um número inteiro; b) armazene esse número numa variável chamada A; c) peça ao usuário para digitar outro número inteiro; d) armazene esse número numa variável chamada C; e) exiba os valores digitados.</h1>
+
+	<div>
+		<label for="numeroA">Digite um número inteiro:</label>
+		<input type="number" id="numeroA">
+		<label for="numeroC">Digite outro número inteiro:</label>
+		<input type="number" id="numeroC">
+		<button onclick="exibirValores()">Exibir valores</button>
+	</div>
+
+	<p id="valores"></p>
+
+	<script>
+		function exibirValores() {
+			// Obtém os valores digitados pelo usuário
+			let numeroA = document.getElementById("numeroA").value;
+			let numeroC = document.getElementById("numeroC").value;
+
+			// Exibe os valores na tela
+			document.getElementById("valores").innerHTML = `Os valores digitados são ${numeroA} e ${numeroC}.`;
+		}
+	</script>
+
+</body>
+</html>

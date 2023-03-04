@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio10</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<h1>10. Faça um programa que leia 5 valores reais e imprima o quadrado de cada um deles. Ao fim, imprima também o somatório dos cinco.</h1>
+
+	<div>
+		<label for="valor1">Digite o valor 1:</label>
+		<input type="number" id="valor1">
+	
+		<label for="valor2">Digite o valor 2:</label>
+		<input type="number" id="valor2">
+	
+		<label for="valor3">Digite o valor 3:</label>
+		<input type="number" id="valor3">
+	
+		<label for="valor4">Digite o valor 4:</label>
+		<input type="number" id="valor4">
+	
+		<label for="valor5">Digite o valor 5:</label>
+		<input type="number" id="valor5">
+	
+		<button onclick="calcularQuadrados()">Calcular quadrados</button>
+	</div>
+
+	<p id="quadrados"></p>
+
+	<p id="soma"></p>
+
+	<script>
+		function calcularQuadrados() {
+			// Obtém os valores digitados pelo usuário
+			let valor1 = parseFloat(document.getElementById("valor1").value);
+			let valor2 = parseFloat(document.getElementById("valor2").value);
+			let valor3 = parseFloat(document.getElementById("valor3").value);
+			let valor4 = parseFloat(document.getElementById("valor4").value);
+			let valor5 = parseFloat(document.getElementById("valor5").value);
+
+			// Calcula o quadrado de cada valor e armazena em um array
+			let quadrados = [valor1**2, valor2**2, valor3**2, valor4**2, valor5**2];
+
+			// Exibe os quadrados
+			document.getElementById("quadrados").innerHTML = "Os quadrados dos valores são: " + quadrados.join(", ");
+
+			// Calcula o somatório dos quadrados
+			let soma = quadrados.reduce((acumulador, valor) => acumulador + valor, 0);
+
+			// Exibe a soma
+			document.getElementById("soma").innerHTML = "A soma dos quadrados é: " + soma;
+		}
+	</script>
+
+</body>
+</html>

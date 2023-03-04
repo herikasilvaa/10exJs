@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio1</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>1. Faça um programa que imprima todos os números pares no intervalo de 1 a 100.</h1>
+	<p id="numeros_pares"></p>
+
+	<script>
+		// Laço for para iterar de 1 a 100
+		for (let i = 1; i <= 100; i++) {
+			// Verifica se o número é par
+			if (i % 2 === 0) {
+				// Adiciona o número par à lista de números pares
+				document.getElementById("numeros_pares").innerHTML += i + "<br>";
+			}
+		}
+	</script>
+
+</body>
+</html>

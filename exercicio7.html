@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio7</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<h1>7. Construa um programa que leia um número inteiro e imprima a informação se este número é ou não divisível por 5. Dica: Utilize o operador % (resto de divisão inteira).</h1>
+
+	<div>
+		<label for="numero">Digite um número inteiro:</label>
+		<input type="number" id="numero">
+		<button onclick="verificarDivisibilidade()">Verificar divisibilidade</button>
+	</div>
+
+	<p id="resultado"></p>
+
+	<script>
+		function verificarDivisibilidade() {
+			// Obtém o número digitado pelo usuário
+			let numero = parseInt(document.getElementById("numero").value);
+
+			// Verifica se o número é divisível por 5
+			if (numero % 5 == 0) {
+				document.getElementById("resultado").innerHTML = "O número é divisível por 5";
+			} else {
+				document.getElementById("resultado").innerHTML = "O número não é divisível por 5";
+			}
+		}
+	</script>
+
+</body>
+</html>

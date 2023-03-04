@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio8</title>
+	<meta charset="utf-8">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<h1>8. Faça um programa que leia o salário bruto e calcule o salário líquido. Para esse programa, o
+		salário líquido será o salário bruto menos os descontos de INSS e IR, seguindo as regras: • caso
+		o salário seja menor que R$1.500,00, não devemos descontar IR e descontaremos 8% de INSS;
+		• para salários a partir R$1.500,00, descontaremos 5% de IR e 11% de INSS.</h1>
+	
+	<div>
+		<label>Digite o valor do salário bruto:</label>
+		<input type="number" id="salarioBruto">
+		<button onclick="calcularSalarioLiquido()">Calcular</button>
+	</div>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcularSalarioLiquido() {
+			var salarioBruto = parseFloat(document.getElementById("salarioBruto").value);
+			var descontoINSS, descontoIR, salarioLiquido;
+
+			if (salarioBruto <= 1500) {
+				descontoINSS = salarioBruto * 0.08;
+				salarioLiquido = salarioBruto - descontoINSS;
+			} else {
+				descontoINSS = salarioBruto * 0.11;
+				descontoIR = (salarioBruto - 1500) * 0.05;
+				salarioLiquido = salarioBruto - descontoINSS - descontoIR;
+			}
+
+			document.getElementById("resultado").innerHTML = "Salário líquido: R$ " + salarioLiquido.toFixed(2);
+		}
+	</script>
+</body>
+</html>

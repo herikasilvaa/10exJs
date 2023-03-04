@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio9</title>
+		<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		form{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>	
+</head>
+<body>
+
+	<h1>9. Faça um programa que leia o sexo do usuário e apresente a mensagem “O sexo é válido”, se o
+		caractere digitado for "M" ou "F".</h1>
+
+	<form>
+		<label for="sexo">Digite o sexo: </label>
+		<input type="text" id="sexo" name="sexo"><br><br>
+		<input type="button" value="Validar" onclick="validarSexo()">
+	</form>
+
+	<p id="resultado"></p>
+
+	<script>
+		function validarSexo() {
+			var sexo = document.getElementById("sexo").value;
+			if (sexo == "M" || sexo == "F") {
+				document.getElementById("resultado").innerHTML = "O sexo é válido";
+			} else {
+				document.getElementById("resultado").innerHTML = "O sexo é inválido";
+			}
+		}
+	</script>
+
+</body>
+</html>

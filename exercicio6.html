@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio6</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>6. Faça um programa que leia o valor do salário bruto de um funcionário. Se o salário for menor ou igual a R$ 500,00, o programa deve aplicar um aumento de 0.10 (10%).</h1>
+
+	<div>
+		<label for="salario">Digite o salário bruto do funcionário:</label>
+		<input type="number" id="salario">
+		<button onclick="calcularSalario()">Calcular salário</button>
+	</div>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcularSalario() {
+			// Obtém o salário digitado pelo usuário
+			let salario = parseFloat(document.getElementById("salario").value);
+
+			// Verifica se o salário é menor ou igual a R$ 500,00
+			if (salario <= 500) {
+				// Aplica o aumento de 10%
+				salario *= 1.1;
+			}
+
+			// Exibe o resultado
+			document.getElementById("resultado").innerHTML = "O salário com aumento é R$ " + salario.toFixed(2);
+		}
+	</script>
+
+</body>
+</html>

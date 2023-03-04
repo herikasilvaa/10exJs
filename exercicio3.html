@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio3</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background: linear-gradient(45deg, #a9ade7, #767cce);	
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		h1{
+			font-size: 20px;
+			width: 350px;
+			margin-bottom: 20px;
+		}
+
+		div{
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<h1>3. Faça um programa que leia os valores dos salários atuais dos funcionários de uma
+		empresa e imprima os valores com aumento. Se o salário for menor ou igual a R$ 500,00,
+		o programa deve aplicar um aumento de 0.10 (10%) e se for maior que R$ 500,00, o
+		aumento deve ser de 0.08 (8%). Assim como no nosso último exemplo, o usuário é que
+		deve informar quando deseja sair. Ou seja, ele deve digitar o
+		salário de um funcionário e o programa vai exibir o valor com o aumento. Depois ele
+		deve responder se deseja digitar outro salário ou não. Se ele responder que sim, deve-se
+		solicitar o novo salário e exibir o valor com aumento. Então torna-se a perguntar se
+		ele deseja informar um novo salário e repetir o laço até que ele não queira informar novos
+		salários.</h1>
+
+	<div>
+		<label for="salario">Salário:</label>
+		<input type="number" id="salario" name="salario" required>
+		<br><br>
+		<button type="button" onclick="calcular()">Calcular</button>
+		<button type="reset">Limpar</button>
+	</div>
+
+	<div id="resultado"></div>
+
+	<script>
+		function calcular() {
+			var salario = parseFloat(document.getElementById("salario").value);
+			var aumento;
+
+			if (salario <= 500) {
+				aumento = salario * 0.1;
+			} else {
+				aumento = salario * 0.08;
+			}
+
+			var novo_salario = salario + aumento;
+
+			document.getElementById("resultado").innerHTML = "O novo salário é: R$ " + novo_salario.toFixed(2);
+
+			var continuar = confirm("Deseja informar outro salário?");
+
+			if (continuar) {
+				document.getElementById("salario").value = "";
+			}
+		}
+	</script>
+</body>
+</html>
